@@ -1,0 +1,1081 @@
+swagger: "2.0"
+info:
+  title: beego Test API
+  description: beego has a very cool tools to autogenerate documents for your API
+  version: 1.0.0
+  termsOfService: http://beego.me/
+  contact:
+    email: astaxie@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /modulo_publicacion/:
+    get:
+      tags:
+      - modulo_publicacion
+      description: get ModuloPublicacion
+      operationId: ModuloPublicacionController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ModuloPublicacion'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - modulo_publicacion
+      description: create ModuloPublicacion
+      operationId: ModuloPublicacionController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for ModuloPublicacion content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ModuloPublicacion'
+      responses:
+        "201":
+          description: '{int} models.ModuloPublicacion'
+        "400":
+          description: the request contains incorrect syntax
+  /modulo_publicacion/{id}:
+    get:
+      tags:
+      - modulo_publicacion
+      description: get ModuloPublicacion by id
+      operationId: ModuloPublicacionController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ModuloPublicacion'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - modulo_publicacion
+      description: update the ModuloPublicacion
+      operationId: ModuloPublicacionController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for ModuloPublicacion content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ModuloPublicacion'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ModuloPublicacion'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - modulo_publicacion
+      description: delete the ModuloPublicacion
+      operationId: ModuloPublicacionController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+  /noticia/:
+    get:
+      tags:
+      - noticia
+      description: get Noticia
+      operationId: NoticiaController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Noticia'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - noticia
+      description: create Noticia
+      operationId: NoticiaController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Noticia content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Noticia'
+      responses:
+        "201":
+          description: '{int} models.Noticia'
+        "400":
+          description: the request contains incorrect syntax
+  /noticia/{id}:
+    get:
+      tags:
+      - noticia
+      description: get Noticia by id
+      operationId: NoticiaController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Noticia'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - noticia
+      description: update the Noticia
+      operationId: NoticiaController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Noticia content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Noticia'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Noticia'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - noticia
+      description: delete the Noticia
+      operationId: NoticiaController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+  /noticia_tipo_contenido/:
+    get:
+      tags:
+      - noticia_tipo_contenido
+      description: get NoticiaTipoContenido
+      operationId: NoticiaTipoContenidoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.NoticiaTipoContenido'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - noticia_tipo_contenido
+      description: create NoticiaTipoContenido
+      operationId: NoticiaTipoContenidoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for NoticiaTipoContenido content
+        required: true
+        schema:
+          $ref: '#/definitions/models.NoticiaTipoContenido'
+      responses:
+        "201":
+          description: '{int} models.NoticiaTipoContenido'
+        "400":
+          description: the request contains incorrect syntax
+  /noticia_tipo_contenido/{id}:
+    get:
+      tags:
+      - noticia_tipo_contenido
+      description: get NoticiaTipoContenido by id
+      operationId: NoticiaTipoContenidoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.NoticiaTipoContenido'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - noticia_tipo_contenido
+      description: update the NoticiaTipoContenido
+      operationId: NoticiaTipoContenidoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for NoticiaTipoContenido content
+        required: true
+        schema:
+          $ref: '#/definitions/models.NoticiaTipoContenido'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.NoticiaTipoContenido'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - noticia_tipo_contenido
+      description: delete the NoticiaTipoContenido
+      operationId: NoticiaTipoContenidoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+  /noticia_tipo_etiqueta/:
+    get:
+      tags:
+      - noticia_tipo_etiqueta
+      description: get NoticiaTipoEtiqueta
+      operationId: NoticiaTipoEtiquetaController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.NoticiaTipoEtiqueta'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - noticia_tipo_etiqueta
+      description: create NoticiaTipoEtiqueta
+      operationId: NoticiaTipoEtiquetaController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for NoticiaTipoEtiqueta content
+        required: true
+        schema:
+          $ref: '#/definitions/models.NoticiaTipoEtiqueta'
+      responses:
+        "201":
+          description: '{int} models.NoticiaTipoEtiqueta'
+        "400":
+          description: the request contains incorrect syntax
+  /noticia_tipo_etiqueta/{id}:
+    get:
+      tags:
+      - noticia_tipo_etiqueta
+      description: get NoticiaTipoEtiqueta by id
+      operationId: NoticiaTipoEtiquetaController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.NoticiaTipoEtiqueta'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - noticia_tipo_etiqueta
+      description: update the NoticiaTipoEtiqueta
+      operationId: NoticiaTipoEtiquetaController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for NoticiaTipoEtiqueta content
+        required: true
+        schema:
+          $ref: '#/definitions/models.NoticiaTipoEtiqueta'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.NoticiaTipoEtiqueta'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - noticia_tipo_etiqueta
+      description: delete the NoticiaTipoEtiqueta
+      operationId: NoticiaTipoEtiquetaController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+  /tipo_contenido/:
+    get:
+      tags:
+      - tipo_contenido
+      description: get TipoContenido
+      operationId: TipoContenidoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoContenido'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - tipo_contenido
+      description: create TipoContenido
+      operationId: TipoContenidoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for TipoContenido content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoContenido'
+      responses:
+        "201":
+          description: '{int} models.TipoContenido'
+        "400":
+          description: the request contains incorrect syntax
+  /tipo_contenido/{id}:
+    get:
+      tags:
+      - tipo_contenido
+      description: get TipoContenido by id
+      operationId: TipoContenidoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoContenido'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - tipo_contenido
+      description: update the TipoContenido
+      operationId: TipoContenidoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for TipoContenido content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoContenido'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoContenido'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - tipo_contenido
+      description: delete the TipoContenido
+      operationId: TipoContenidoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+  /tipo_estilo/:
+    get:
+      tags:
+      - tipo_estilo
+      description: get TipoEstilo
+      operationId: TipoEstiloController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoEstilo'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - tipo_estilo
+      description: create TipoEstilo
+      operationId: TipoEstiloController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for TipoEstilo content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoEstilo'
+      responses:
+        "201":
+          description: '{int} models.TipoEstilo'
+        "400":
+          description: the request contains incorrect syntax
+  /tipo_estilo/{id}:
+    get:
+      tags:
+      - tipo_estilo
+      description: get TipoEstilo by id
+      operationId: TipoEstiloController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoEstilo'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - tipo_estilo
+      description: update the TipoEstilo
+      operationId: TipoEstiloController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for TipoEstilo content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoEstilo'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoEstilo'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - tipo_estilo
+      description: delete the TipoEstilo
+      operationId: TipoEstiloController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+  /tipo_etiqueta/:
+    get:
+      tags:
+      - tipo_etiqueta
+      description: get TipoEtiqueta
+      operationId: TipoEtiquetaController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoEtiqueta'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - tipo_etiqueta
+      description: create TipoEtiqueta
+      operationId: TipoEtiquetaController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for TipoEtiqueta content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoEtiqueta'
+      responses:
+        "201":
+          description: '{int} models.TipoEtiqueta'
+        "400":
+          description: the request contains incorrect syntax
+  /tipo_etiqueta/{id}:
+    get:
+      tags:
+      - tipo_etiqueta
+      description: get TipoEtiqueta by id
+      operationId: TipoEtiquetaController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoEtiqueta'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - tipo_etiqueta
+      description: update the TipoEtiqueta
+      operationId: TipoEtiquetaController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for TipoEtiqueta content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoEtiqueta'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoEtiqueta'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - tipo_etiqueta
+      description: delete the TipoEtiqueta
+      operationId: TipoEtiquetaController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+  /tipo_prioridad/:
+    get:
+      tags:
+      - tipo_prioridad
+      description: get TipoPrioridad
+      operationId: TipoPrioridadController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoPrioridad'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - tipo_prioridad
+      description: create TipoPrioridad
+      operationId: TipoPrioridadController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for TipoPrioridad content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoPrioridad'
+      responses:
+        "201":
+          description: '{int} models.TipoPrioridad'
+        "400":
+          description: the request contains incorrect syntax
+  /tipo_prioridad/{id}:
+    get:
+      tags:
+      - tipo_prioridad
+      description: get TipoPrioridad by id
+      operationId: TipoPrioridadController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoPrioridad'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - tipo_prioridad
+      description: update the TipoPrioridad
+      operationId: TipoPrioridadController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for TipoPrioridad content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoPrioridad'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoPrioridad'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - tipo_prioridad
+      description: delete the TipoPrioridad
+      operationId: TipoPrioridadController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+definitions:
+  models.ModuloPublicacion:
+    title: ModuloPublicacion
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      FechaCreacion:
+        type: string
+      FechaModificacion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      IdNoticia:
+        $ref: '#/definitions/models.Noticia'
+      RefModuloId:
+        type: string
+  models.Noticia:
+    title: Noticia
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      FechaCreacion:
+        type: string
+      FechaModificacion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      IdTipoEstilo:
+        $ref: '#/definitions/models.TipoEstilo'
+      IdTipoPrioridad:
+        $ref: '#/definitions/models.TipoPrioridad'
+  models.NoticiaTipoContenido:
+    title: NoticiaTipoContenido
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      Dato:
+        type: string
+      FechaCreacion:
+        type: string
+      FechaModificacion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      IdNoticia:
+        $ref: '#/definitions/models.Noticia'
+      IdTipoContenido:
+        $ref: '#/definitions/models.TipoContenido'
+  models.NoticiaTipoEtiqueta:
+    title: NoticiaTipoEtiqueta
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      FechaCreacion:
+        type: string
+      FechaModificacion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      IdNoticia:
+        $ref: '#/definitions/models.Noticia'
+      IdTipoEtiqueta:
+        $ref: '#/definitions/models.TipoEtiqueta'
+  models.TipoContenido:
+    title: TipoContenido
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      FechaCreacion:
+        type: string
+      FechaModificacion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      NombreContenido:
+        type: string
+  models.TipoEstilo:
+    title: TipoEstilo
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      FechaCreacion:
+        type: string
+      FechaModificacion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      NombreEstilo:
+        type: string
+  models.TipoEtiqueta:
+    title: TipoEtiqueta
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      FechaCreacion:
+        type: string
+      FechaModificacion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      NombreEtiqueta:
+        type: string
+  models.TipoPrioridad:
+    title: TipoPrioridad
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      FechaCreacion:
+        type: string
+      FechaModificacion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      NombrePrioridad:
+        type: string
+tags:
+- name: noticia
+  description: |
+    NoticiaController operations for Noticia
+- name: noticia_tipo_etiqueta
+  description: |
+    NoticiaTipoEtiquetaController operations for NoticiaTipoEtiqueta
+- name: tipo_etiqueta
+  description: |
+    TipoEtiquetaController operations for TipoEtiqueta
+- name: modulo_publicacion
+  description: |
+    ModuloPublicacionController operations for ModuloPublicacion
+- name: noticia_tipo_contenido
+  description: |
+    NoticiaTipoContenidoController operations for NoticiaTipoContenido
+- name: tipo_contenido
+  description: |
+    TipoContenidoController operations for TipoContenido
+- name: tipo_estilo
+  description: |
+    TipoEstiloController operations for TipoEstilo
+- name: tipo_prioridad
+  description: |
+    TipoPrioridadController operations for TipoPrioridad
