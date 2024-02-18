@@ -139,7 +139,7 @@ func (c *NoticiaTipoContenidoController) GetAll() {
 		if l == nil {
 			l = append(l, map[string]interface{}{})
 		}
-		c.Data["json"] = map[string]interface{}{"Success": true, "Status": "200", "Message": "Request successful", "Data": l}
+		c.Data["json"] = l
 	}
 	c.ServeJSON()
 }
