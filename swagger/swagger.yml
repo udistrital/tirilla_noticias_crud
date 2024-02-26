@@ -353,6 +353,27 @@ paths:
           description: '{string} delete success!'
         "404":
           description: not found resource
+  /noticia_tipo_contenido/contenido/{idNoticia}:
+    get:
+      tags:
+      - noticia_tipo_contenido
+      description: get NoticiaTipoContenido by idNoticia
+      operationId: NoticiaTipoContenidoController.Get Contenidos By Id Noticia
+      parameters:
+      - in: path
+        name: idNoticia
+        description: The idNoticia you want to get
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/models.NoticiaTipoContenido'
+        "404":
+          description: not found resource
   /noticia_tipo_etiqueta/:
     get:
       tags:
@@ -465,6 +486,27 @@ paths:
       responses:
         "200":
           description: '{string} delete success!'
+        "404":
+          description: not found resource
+  /noticia_tipo_etiqueta/etiquetas/{idNoticia}:
+    get:
+      tags:
+      - noticia_tipo_etiqueta
+      description: get NoticiaTipoEtiqueta by idNoticia
+      operationId: NoticiaTipoEtiquetaController.Get Etiquetas By Id Noticia
+      parameters:
+      - in: path
+        name: idNoticia
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/models.NoticiaTipoEtiqueta'
         "404":
           description: not found resource
   /tipo_contenido/:

@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/udistrital/noticias_crud/models"
+	"github.com/udistrital/tirilla_noticias_crud/models"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
@@ -25,6 +25,7 @@ func (c *NoticiaTipoEtiquetaController) URLMapping() {
 	c.Mapping("GetAll", c.GetAll)
 	c.Mapping("Put", c.Put)
 	c.Mapping("Delete", c.Delete)
+	c.Mapping("GetEtiquetasByIdNoticia", c.GetEtiquetasByIdNoticia)
 }
 
 // Post ...
@@ -191,5 +192,38 @@ func (c *NoticiaTipoEtiquetaController) Delete() {
 		c.Data["mesaage"] = "Error service Delete: Request contains incorrect parameter"
 		c.Abort("404")
 	}
+	c.ServeJSON()
+}
+
+// GetEtiquetasByIdNoticia ...
+// @Title Get Etiquetas By Id Noticia
+// @Description get NoticiaTipoEtiqueta by idNoticia
+// @Param	idNoticia		path 	string	true		"The key for staticblock"
+// @Success 200 {object} []models.NoticiaTipoEtiqueta
+// @Failure 404 not found resource
+// @router /etiquetas/:idNoticia [get]
+func (c *NoticiaTipoEtiquetaController) GetEtiquetasByIdNoticia() {
+	idStr := c.Ctx.Input.Param(":idNoticia")
+	id, _ := strconv.Atoi(idStr)
+
+	// Llamar a la función para obtener las etiquetas por ID de noticia
+	v, err := models.GetEtiquetasByIdNoticia(id)
+	if err != nil {
+		logs.Error(err)
+		c.Data["json"] = map[string]interface{}{"Success": false, "Status": "404", "Message": "Error en el servicio GetEtiquetasByIdNoticia: El parámetro de solicitud es incorrecto o no existe ningún registro"}
+		c.ServeJSON()
+		return
+	}
+
+	// Si no se encuentran etiquetas asociadas a la noticia, responder con un mensaje apropiado
+	if v == nil {
+		c.Data["json"] = map[string]interface{}{"Success": true, "Status": "200", "Message": "No se encontraron etiquetas asociadas a la noticia", "Data": []*models.NoticiaTipoEtiqueta{}}
+		c.ServeJSON()
+		return
+	}
+
+	// Respondiendo con las etiquetas encontradas
+	logs.Info(v)
+	c.Data["json"] = map[string]interface{}{"Success": true, "Status": "200", "Message": "Solicitud exitosa", "Data": v}
 	c.ServeJSON()
 }

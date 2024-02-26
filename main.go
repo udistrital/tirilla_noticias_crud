@@ -5,7 +5,7 @@ import (
 	"github.com/astaxie/beego/orm"
 	"github.com/astaxie/beego/plugins/cors"
 	_ "github.com/lib/pq"
-	_ "github.com/udistrital/noticias_crud/routers"
+	_ "github.com/udistrital/tirilla_noticias_crud/routers"
 	apistatus "github.com/udistrital/utils_oas/apiStatusLib"
 	"github.com/udistrital/utils_oas/auditoria"
 	"github.com/udistrital/utils_oas/customerrorv2"
