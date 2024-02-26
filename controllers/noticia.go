@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/udistrital/noticias_crud/models"
+	"github.com/udistrital/tirilla_noticias_crud/models"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
@@ -139,7 +139,7 @@ func (c *NoticiaController) GetAll() {
 		if l == nil {
 			l = append(l, map[string]interface{}{})
 		}
-		c.Data["json"] = map[string]interface{}{"Success": true, "Status": "200", "Message": "Request successful", "Data": l}
+		c.Data["json"] = l
 	}
 	c.ServeJSON()
 }

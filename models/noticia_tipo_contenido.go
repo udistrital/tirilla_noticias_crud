@@ -38,10 +38,19 @@ func AddNoticiaTipoContenido(m *NoticiaTipoContenido) (id int64, err error) {
 
 // GetNoticiaTipoContenidoById retrieves NoticiaTipoContenido by Id. Returns error if
 // Id doesn't exist
-func GetNoticiaTipoContenidoById(id int) (v *NoticiaTipoContenido, err error) {
+func GetNoticiaTipoContenidoById(id int) (v []*NoticiaTipoContenido, err error) {
 	o := orm.NewOrm()
-	v = &NoticiaTipoContenido{Id: id}
-	if err = o.Read(v); err == nil {
+	if _, err := o.QueryTable("noticia_tipo_contenido").Filter("id_noticia", id).All(&v); err == nil {
+		return v, nil
+	}
+	return nil, err
+}
+
+// GetContenidosByIdNoticia retrieves NoticiaTipoContenido by IdNoticia. Returns error if
+// IdNoticia doesn't exist
+func GetContenidosByIdNoticia(id int) (v []*NoticiaTipoContenido, err error) {
+	o := orm.NewOrm()
+	if _, err := o.QueryTable("noticia_tipo_contenido").Filter("id_noticia", id).All(&v); err == nil {
 		return v, nil
 	}
 	return nil, err

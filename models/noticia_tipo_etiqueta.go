@@ -46,6 +46,16 @@ func GetNoticiaTipoEtiquetaById(id int) (v *NoticiaTipoEtiqueta, err error) {
 	return nil, err
 }
 
+// GetNoticiaTipoEtiquetaById retrieves NoticiaTipoEtiqueta by Id. Returns error if
+// Id doesn't exist
+func GetEtiquetasByIdNoticia(id int) (v []*NoticiaTipoEtiqueta, err error) {
+	o := orm.NewOrm()
+	if _, err := o.QueryTable("noticia_tipo_etiqueta").Filter("id_noticia", id).All(&v); err == nil {
+		return v, nil
+	}
+	return nil, err
+}
+
 // GetAllNoticiaTipoEtiqueta retrieves all NoticiaTipoEtiqueta matches certain condition. Returns empty list if
 // no records exist
 func GetAllNoticiaTipoEtiqueta(query map[string]string, fields []string, sortby []string, order []string,

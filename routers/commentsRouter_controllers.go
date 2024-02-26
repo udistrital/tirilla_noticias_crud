@@ -7,7 +7,7 @@ import (
 
 func init() {
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:ModuloPublicacionController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:ModuloPublicacionController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:ModuloPublicacionController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:ModuloPublicacionController"],
         beego.ControllerComments{
             Method: "Post",
             Router: "/",
@@ -16,7 +16,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:ModuloPublicacionController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:ModuloPublicacionController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:ModuloPublicacionController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:ModuloPublicacionController"],
         beego.ControllerComments{
             Method: "GetAll",
             Router: "/",
@@ -25,7 +25,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:ModuloPublicacionController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:ModuloPublicacionController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:ModuloPublicacionController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:ModuloPublicacionController"],
         beego.ControllerComments{
             Method: "GetOne",
             Router: "/:id",
@@ -34,7 +34,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:ModuloPublicacionController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:ModuloPublicacionController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:ModuloPublicacionController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:ModuloPublicacionController"],
         beego.ControllerComments{
             Method: "Put",
             Router: "/:id",
@@ -43,7 +43,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:ModuloPublicacionController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:ModuloPublicacionController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:ModuloPublicacionController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:ModuloPublicacionController"],
         beego.ControllerComments{
             Method: "Delete",
             Router: "/:id",
@@ -52,7 +52,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaController"],
         beego.ControllerComments{
             Method: "Post",
             Router: "/",
@@ -61,7 +61,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaController"],
         beego.ControllerComments{
             Method: "GetAll",
             Router: "/",
@@ -70,7 +70,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaController"],
         beego.ControllerComments{
             Method: "GetOne",
             Router: "/:id",
@@ -79,7 +79,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaController"],
         beego.ControllerComments{
             Method: "Put",
             Router: "/:id",
@@ -88,7 +88,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaController"],
         beego.ControllerComments{
             Method: "Delete",
             Router: "/:id",
@@ -97,7 +97,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoContenidoController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoContenidoController"],
         beego.ControllerComments{
             Method: "Post",
             Router: "/",
@@ -106,7 +106,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoContenidoController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoContenidoController"],
         beego.ControllerComments{
             Method: "GetAll",
             Router: "/",
@@ -115,7 +115,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoContenidoController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoContenidoController"],
         beego.ControllerComments{
             Method: "GetOne",
             Router: "/:id",
@@ -124,7 +124,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoContenidoController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoContenidoController"],
         beego.ControllerComments{
             Method: "Put",
             Router: "/:id",
@@ -133,7 +133,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoContenidoController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoContenidoController"],
         beego.ControllerComments{
             Method: "Delete",
             Router: "/:id",
@@ -142,7 +142,16 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoEtiquetaController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoContenidoController"],
+        beego.ControllerComments{
+            Method: "GetContenidosByIdNoticia",
+            Router: "/contenido/:idNoticia",
+            AllowHTTPMethods: []string{"get"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoEtiquetaController"],
         beego.ControllerComments{
             Method: "Post",
             Router: "/",
@@ -151,7 +160,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoEtiquetaController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoEtiquetaController"],
         beego.ControllerComments{
             Method: "GetAll",
             Router: "/",
@@ -160,7 +169,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoEtiquetaController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoEtiquetaController"],
         beego.ControllerComments{
             Method: "GetOne",
             Router: "/:id",
@@ -169,7 +178,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoEtiquetaController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoEtiquetaController"],
         beego.ControllerComments{
             Method: "Put",
             Router: "/:id",
@@ -178,7 +187,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:NoticiaTipoEtiquetaController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoEtiquetaController"],
         beego.ControllerComments{
             Method: "Delete",
             Router: "/:id",
@@ -187,7 +196,16 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoContenidoController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:NoticiaTipoEtiquetaController"],
+        beego.ControllerComments{
+            Method: "GetEtiquetasByIdNoticia",
+            Router: "/etiquetas/:idNoticia",
+            AllowHTTPMethods: []string{"get"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoContenidoController"],
         beego.ControllerComments{
             Method: "Post",
             Router: "/",
@@ -196,7 +214,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoContenidoController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoContenidoController"],
         beego.ControllerComments{
             Method: "GetAll",
             Router: "/",
@@ -205,7 +223,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoContenidoController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoContenidoController"],
         beego.ControllerComments{
             Method: "GetOne",
             Router: "/:id",
@@ -214,7 +232,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoContenidoController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoContenidoController"],
         beego.ControllerComments{
             Method: "Put",
             Router: "/:id",
@@ -223,7 +241,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoContenidoController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoContenidoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoContenidoController"],
         beego.ControllerComments{
             Method: "Delete",
             Router: "/:id",
@@ -232,7 +250,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEstiloController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEstiloController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEstiloController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEstiloController"],
         beego.ControllerComments{
             Method: "Post",
             Router: "/",
@@ -241,7 +259,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEstiloController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEstiloController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEstiloController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEstiloController"],
         beego.ControllerComments{
             Method: "GetAll",
             Router: "/",
@@ -250,7 +268,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEstiloController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEstiloController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEstiloController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEstiloController"],
         beego.ControllerComments{
             Method: "GetOne",
             Router: "/:id",
@@ -259,7 +277,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEstiloController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEstiloController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEstiloController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEstiloController"],
         beego.ControllerComments{
             Method: "Put",
             Router: "/:id",
@@ -268,7 +286,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEstiloController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEstiloController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEstiloController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEstiloController"],
         beego.ControllerComments{
             Method: "Delete",
             Router: "/:id",
@@ -277,7 +295,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEtiquetaController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEtiquetaController"],
         beego.ControllerComments{
             Method: "Post",
             Router: "/",
@@ -286,7 +304,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEtiquetaController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEtiquetaController"],
         beego.ControllerComments{
             Method: "GetAll",
             Router: "/",
@@ -295,7 +313,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEtiquetaController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEtiquetaController"],
         beego.ControllerComments{
             Method: "GetOne",
             Router: "/:id",
@@ -304,7 +322,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEtiquetaController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEtiquetaController"],
         beego.ControllerComments{
             Method: "Put",
             Router: "/:id",
@@ -313,7 +331,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoEtiquetaController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEtiquetaController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoEtiquetaController"],
         beego.ControllerComments{
             Method: "Delete",
             Router: "/:id",
@@ -322,7 +340,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoPrioridadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoPrioridadController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoPrioridadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoPrioridadController"],
         beego.ControllerComments{
             Method: "Post",
             Router: "/",
@@ -331,7 +349,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoPrioridadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoPrioridadController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoPrioridadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoPrioridadController"],
         beego.ControllerComments{
             Method: "GetAll",
             Router: "/",
@@ -340,7 +358,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoPrioridadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoPrioridadController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoPrioridadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoPrioridadController"],
         beego.ControllerComments{
             Method: "GetOne",
             Router: "/:id",
@@ -349,7 +367,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoPrioridadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoPrioridadController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoPrioridadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoPrioridadController"],
         beego.ControllerComments{
             Method: "Put",
             Router: "/:id",
@@ -358,7 +376,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoPrioridadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/noticias_crud/controllers:TipoPrioridadController"],
+    beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoPrioridadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/tirilla_noticias_crud/controllers:TipoPrioridadController"],
         beego.ControllerComments{
             Method: "Delete",
             Router: "/:id",
