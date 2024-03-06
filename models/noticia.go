@@ -11,12 +11,14 @@ import (
 )
 
 type Noticia struct {
-	Id                int            `orm:"column(id);pk;auto"`
-	Activo            bool           `orm:"column(activo)"`
-	FechaCreacion     string         `orm:"column(fecha_creacion);type(timestamp without time zone)"`
-	FechaModificacion string         `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
-	IdTipoEstilo      *TipoEstilo    `orm:"column(id_tipo_estilo);rel(fk)"`
-	IdTipoPrioridad   *TipoPrioridad `orm:"column(id_tipo_prioridad);rel(fk)"`
+	Id                int    `orm:"column(id);pk;auto"`
+	Activo            bool   `orm:"column(activo)"`
+	FechaCreacion     string `orm:"column(fecha_creacion);type(timestamp without time zone)"`
+	FechaModificacion string `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
+	Prioridad         int    `orm:"column(prioridad);"`
+	IdEstilo          int    `orm:"column(estilo_id);"`
+	FechaInicio       string `orm:"column(fecha_inicio);type(timestamp without time zone)"`
+	FechaFinal        string `orm:"column(fecha_final);type(timestamp without time zone)"`
 }
 
 func (t *Noticia) TableName() string {

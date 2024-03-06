@@ -361,13 +361,13 @@
                 }
             }
         },
-        "/noticia_tipo_contenido/": {
+        "/noticia_contenido/": {
             "get": {
                 "tags": [
-                    "noticia_tipo_contenido"
+                    "noticia_contenido"
                 ],
-                "description": "get NoticiaTipoContenido",
-                "operationId": "NoticiaTipoContenidoController.Get All",
+                "description": "get NoticiaContenido",
+                "operationId": "NoticiaContenidoController.Get All",
                 "parameters": [
                     {
                         "in": "query",
@@ -410,7 +410,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.NoticiaTipoContenido"
+                            "$ref": "#/definitions/models.NoticiaContenido"
                         }
                     },
                     "404": {
@@ -420,24 +420,24 @@
             },
             "post": {
                 "tags": [
-                    "noticia_tipo_contenido"
+                    "noticia_contenido"
                 ],
-                "description": "create NoticiaTipoContenido",
-                "operationId": "NoticiaTipoContenidoController.Post",
+                "description": "create NoticiaContenido",
+                "operationId": "NoticiaContenidoController.Post",
                 "parameters": [
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "body for NoticiaTipoContenido content",
+                        "description": "body for NoticiaContenido content",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.NoticiaTipoContenido"
+                            "$ref": "#/definitions/models.NoticiaContenido"
                         }
                     }
                 ],
                 "responses": {
                     "201": {
-                        "description": "{int} models.NoticiaTipoContenido"
+                        "description": "{int} models.NoticiaContenido"
                     },
                     "400": {
                         "description": "the request contains incorrect syntax"
@@ -445,13 +445,13 @@
                 }
             }
         },
-        "/noticia_tipo_contenido/{id}": {
+        "/noticia_contenido/{id}": {
             "get": {
                 "tags": [
-                    "noticia_tipo_contenido"
+                    "noticia_contenido"
                 ],
-                "description": "get NoticiaTipoContenido by id",
-                "operationId": "NoticiaTipoContenidoController.Get One",
+                "description": "get NoticiaContenido by id",
+                "operationId": "NoticiaContenidoController.Get One",
                 "parameters": [
                     {
                         "in": "path",
@@ -465,7 +465,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.NoticiaTipoContenido"
+                            "$ref": "#/definitions/models.NoticiaContenido"
                         }
                     },
                     "404": {
@@ -475,10 +475,10 @@
             },
             "put": {
                 "tags": [
-                    "noticia_tipo_contenido"
+                    "noticia_contenido"
                 ],
-                "description": "update the NoticiaTipoContenido",
-                "operationId": "NoticiaTipoContenidoController.Put",
+                "description": "update the NoticiaContenido",
+                "operationId": "NoticiaContenidoController.Put",
                 "parameters": [
                     {
                         "in": "path",
@@ -490,10 +490,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "body for NoticiaTipoContenido content",
+                        "description": "body for NoticiaContenido content",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.NoticiaTipoContenido"
+                            "$ref": "#/definitions/models.NoticiaContenido"
                         }
                     }
                 ],
@@ -501,7 +501,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.NoticiaTipoContenido"
+                            "$ref": "#/definitions/models.NoticiaContenido"
                         }
                     },
                     "400": {
@@ -511,10 +511,10 @@
             },
             "delete": {
                 "tags": [
-                    "noticia_tipo_contenido"
+                    "noticia_contenido"
                 ],
-                "description": "delete the NoticiaTipoContenido",
-                "operationId": "NoticiaTipoContenidoController.Delete",
+                "description": "delete the NoticiaContenido",
+                "operationId": "NoticiaContenidoController.Delete",
                 "parameters": [
                     {
                         "in": "path",
@@ -534,13 +534,13 @@
                 }
             }
         },
-        "/noticia_tipo_etiqueta/": {
+        "/noticia_etiqueta/": {
             "get": {
                 "tags": [
-                    "noticia_tipo_etiqueta"
+                    "noticia_etiqueta"
                 ],
-                "description": "get NoticiaTipoEtiqueta",
-                "operationId": "NoticiaTipoEtiquetaController.Get All",
+                "description": "get NoticiaEtiqueta",
+                "operationId": "NoticiaEtiquetaController.Get All",
                 "parameters": [
                     {
                         "in": "query",
@@ -583,7 +583,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.NoticiaTipoEtiqueta"
+                            "$ref": "#/definitions/models.NoticiaEtiqueta"
                         }
                     },
                     "404": {
@@ -593,24 +593,24 @@
             },
             "post": {
                 "tags": [
-                    "noticia_tipo_etiqueta"
+                    "noticia_etiqueta"
                 ],
-                "description": "create NoticiaTipoEtiqueta",
-                "operationId": "NoticiaTipoEtiquetaController.Post",
+                "description": "create NoticiaEtiqueta",
+                "operationId": "NoticiaEtiquetaController.Post",
                 "parameters": [
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "body for NoticiaTipoEtiqueta content",
+                        "description": "body for NoticiaEtiqueta content",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.NoticiaTipoEtiqueta"
+                            "$ref": "#/definitions/models.NoticiaEtiqueta"
                         }
                     }
                 ],
                 "responses": {
                     "201": {
-                        "description": "{int} models.NoticiaTipoEtiqueta"
+                        "description": "{int} models.NoticiaEtiqueta"
                     },
                     "400": {
                         "description": "the request contains incorrect syntax"
@@ -618,13 +618,13 @@
                 }
             }
         },
-        "/noticia_tipo_etiqueta/{id}": {
+        "/noticia_etiqueta/{id}": {
             "get": {
                 "tags": [
-                    "noticia_tipo_etiqueta"
+                    "noticia_etiqueta"
                 ],
-                "description": "get NoticiaTipoEtiqueta by id",
-                "operationId": "NoticiaTipoEtiquetaController.Get One",
+                "description": "get NoticiaEtiqueta by id",
+                "operationId": "NoticiaEtiquetaController.Get One",
                 "parameters": [
                     {
                         "in": "path",
@@ -638,7 +638,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.NoticiaTipoEtiqueta"
+                            "$ref": "#/definitions/models.NoticiaEtiqueta"
                         }
                     },
                     "404": {
@@ -648,10 +648,10 @@
             },
             "put": {
                 "tags": [
-                    "noticia_tipo_etiqueta"
+                    "noticia_etiqueta"
                 ],
-                "description": "update the NoticiaTipoEtiqueta",
-                "operationId": "NoticiaTipoEtiquetaController.Put",
+                "description": "update the NoticiaEtiqueta",
+                "operationId": "NoticiaEtiquetaController.Put",
                 "parameters": [
                     {
                         "in": "path",
@@ -663,10 +663,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "body for NoticiaTipoEtiqueta content",
+                        "description": "body for NoticiaEtiqueta content",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.NoticiaTipoEtiqueta"
+                            "$ref": "#/definitions/models.NoticiaEtiqueta"
                         }
                     }
                 ],
@@ -674,7 +674,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.NoticiaTipoEtiqueta"
+                            "$ref": "#/definitions/models.NoticiaEtiqueta"
                         }
                     },
                     "400": {
@@ -684,702 +684,10 @@
             },
             "delete": {
                 "tags": [
-                    "noticia_tipo_etiqueta"
+                    "noticia_etiqueta"
                 ],
-                "description": "delete the NoticiaTipoEtiqueta",
-                "operationId": "NoticiaTipoEtiquetaController.Delete",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "description": "The id you want to delete",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "{string} delete success!"
-                    },
-                    "404": {
-                        "description": "not found resource"
-                    }
-                }
-            }
-        },
-        "/tipo_contenido/": {
-            "get": {
-                "tags": [
-                    "tipo_contenido"
-                ],
-                "description": "get TipoContenido",
-                "operationId": "TipoContenidoController.Get All",
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "query",
-                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "fields",
-                        "description": "Fields returned. e.g. col1,col2 ...",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "sortby",
-                        "description": "Sorted-by fields. e.g. col1,col2 ...",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "order",
-                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "limit",
-                        "description": "Limit the size of result set. Must be an integer",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "offset",
-                        "description": "Start position of result set. Must be an integer",
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoContenido"
-                        }
-                    },
-                    "404": {
-                        "description": "not found resource"
-                    }
-                }
-            },
-            "post": {
-                "tags": [
-                    "tipo_contenido"
-                ],
-                "description": "create TipoContenido",
-                "operationId": "TipoContenidoController.Post",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "body for TipoContenido content",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoContenido"
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "{int} models.TipoContenido"
-                    },
-                    "400": {
-                        "description": "the request contains incorrect syntax"
-                    }
-                }
-            }
-        },
-        "/tipo_contenido/{id}": {
-            "get": {
-                "tags": [
-                    "tipo_contenido"
-                ],
-                "description": "get TipoContenido by id",
-                "operationId": "TipoContenidoController.Get One",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "description": "The key for staticblock",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoContenido"
-                        }
-                    },
-                    "404": {
-                        "description": "not found resource"
-                    }
-                }
-            },
-            "put": {
-                "tags": [
-                    "tipo_contenido"
-                ],
-                "description": "update the TipoContenido",
-                "operationId": "TipoContenidoController.Put",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "description": "The id you want to update",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "body for TipoContenido content",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoContenido"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoContenido"
-                        }
-                    },
-                    "400": {
-                        "description": "the request contains incorrect syntax"
-                    }
-                }
-            },
-            "delete": {
-                "tags": [
-                    "tipo_contenido"
-                ],
-                "description": "delete the TipoContenido",
-                "operationId": "TipoContenidoController.Delete",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "description": "The id you want to delete",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "{string} delete success!"
-                    },
-                    "404": {
-                        "description": "not found resource"
-                    }
-                }
-            }
-        },
-        "/tipo_estilo/": {
-            "get": {
-                "tags": [
-                    "tipo_estilo"
-                ],
-                "description": "get TipoEstilo",
-                "operationId": "TipoEstiloController.Get All",
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "query",
-                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "fields",
-                        "description": "Fields returned. e.g. col1,col2 ...",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "sortby",
-                        "description": "Sorted-by fields. e.g. col1,col2 ...",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "order",
-                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "limit",
-                        "description": "Limit the size of result set. Must be an integer",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "offset",
-                        "description": "Start position of result set. Must be an integer",
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoEstilo"
-                        }
-                    },
-                    "404": {
-                        "description": "not found resource"
-                    }
-                }
-            },
-            "post": {
-                "tags": [
-                    "tipo_estilo"
-                ],
-                "description": "create TipoEstilo",
-                "operationId": "TipoEstiloController.Post",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "body for TipoEstilo content",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoEstilo"
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "{int} models.TipoEstilo"
-                    },
-                    "400": {
-                        "description": "the request contains incorrect syntax"
-                    }
-                }
-            }
-        },
-        "/tipo_estilo/{id}": {
-            "get": {
-                "tags": [
-                    "tipo_estilo"
-                ],
-                "description": "get TipoEstilo by id",
-                "operationId": "TipoEstiloController.Get One",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "description": "The key for staticblock",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoEstilo"
-                        }
-                    },
-                    "404": {
-                        "description": "not found resource"
-                    }
-                }
-            },
-            "put": {
-                "tags": [
-                    "tipo_estilo"
-                ],
-                "description": "update the TipoEstilo",
-                "operationId": "TipoEstiloController.Put",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "description": "The id you want to update",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "body for TipoEstilo content",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoEstilo"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoEstilo"
-                        }
-                    },
-                    "400": {
-                        "description": "the request contains incorrect syntax"
-                    }
-                }
-            },
-            "delete": {
-                "tags": [
-                    "tipo_estilo"
-                ],
-                "description": "delete the TipoEstilo",
-                "operationId": "TipoEstiloController.Delete",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "description": "The id you want to delete",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "{string} delete success!"
-                    },
-                    "404": {
-                        "description": "not found resource"
-                    }
-                }
-            }
-        },
-        "/tipo_etiqueta/": {
-            "get": {
-                "tags": [
-                    "tipo_etiqueta"
-                ],
-                "description": "get TipoEtiqueta",
-                "operationId": "TipoEtiquetaController.Get All",
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "query",
-                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "fields",
-                        "description": "Fields returned. e.g. col1,col2 ...",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "sortby",
-                        "description": "Sorted-by fields. e.g. col1,col2 ...",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "order",
-                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "limit",
-                        "description": "Limit the size of result set. Must be an integer",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "offset",
-                        "description": "Start position of result set. Must be an integer",
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoEtiqueta"
-                        }
-                    },
-                    "404": {
-                        "description": "not found resource"
-                    }
-                }
-            },
-            "post": {
-                "tags": [
-                    "tipo_etiqueta"
-                ],
-                "description": "create TipoEtiqueta",
-                "operationId": "TipoEtiquetaController.Post",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "body for TipoEtiqueta content",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoEtiqueta"
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "{int} models.TipoEtiqueta"
-                    },
-                    "400": {
-                        "description": "the request contains incorrect syntax"
-                    }
-                }
-            }
-        },
-        "/tipo_etiqueta/{id}": {
-            "get": {
-                "tags": [
-                    "tipo_etiqueta"
-                ],
-                "description": "get TipoEtiqueta by id",
-                "operationId": "TipoEtiquetaController.Get One",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "description": "The key for staticblock",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoEtiqueta"
-                        }
-                    },
-                    "404": {
-                        "description": "not found resource"
-                    }
-                }
-            },
-            "put": {
-                "tags": [
-                    "tipo_etiqueta"
-                ],
-                "description": "update the TipoEtiqueta",
-                "operationId": "TipoEtiquetaController.Put",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "description": "The id you want to update",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "body for TipoEtiqueta content",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoEtiqueta"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoEtiqueta"
-                        }
-                    },
-                    "400": {
-                        "description": "the request contains incorrect syntax"
-                    }
-                }
-            },
-            "delete": {
-                "tags": [
-                    "tipo_etiqueta"
-                ],
-                "description": "delete the TipoEtiqueta",
-                "operationId": "TipoEtiquetaController.Delete",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "description": "The id you want to delete",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "{string} delete success!"
-                    },
-                    "404": {
-                        "description": "not found resource"
-                    }
-                }
-            }
-        },
-        "/tipo_prioridad/": {
-            "get": {
-                "tags": [
-                    "tipo_prioridad"
-                ],
-                "description": "get TipoPrioridad",
-                "operationId": "TipoPrioridadController.Get All",
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "query",
-                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "fields",
-                        "description": "Fields returned. e.g. col1,col2 ...",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "sortby",
-                        "description": "Sorted-by fields. e.g. col1,col2 ...",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "order",
-                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "limit",
-                        "description": "Limit the size of result set. Must be an integer",
-                        "type": "string"
-                    },
-                    {
-                        "in": "query",
-                        "name": "offset",
-                        "description": "Start position of result set. Must be an integer",
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoPrioridad"
-                        }
-                    },
-                    "404": {
-                        "description": "not found resource"
-                    }
-                }
-            },
-            "post": {
-                "tags": [
-                    "tipo_prioridad"
-                ],
-                "description": "create TipoPrioridad",
-                "operationId": "TipoPrioridadController.Post",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "body for TipoPrioridad content",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoPrioridad"
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "{int} models.TipoPrioridad"
-                    },
-                    "400": {
-                        "description": "the request contains incorrect syntax"
-                    }
-                }
-            }
-        },
-        "/tipo_prioridad/{id}": {
-            "get": {
-                "tags": [
-                    "tipo_prioridad"
-                ],
-                "description": "get TipoPrioridad by id",
-                "operationId": "TipoPrioridadController.Get One",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "description": "The key for staticblock",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoPrioridad"
-                        }
-                    },
-                    "404": {
-                        "description": "not found resource"
-                    }
-                }
-            },
-            "put": {
-                "tags": [
-                    "tipo_prioridad"
-                ],
-                "description": "update the TipoPrioridad",
-                "operationId": "TipoPrioridadController.Put",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "description": "The id you want to update",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "body for TipoPrioridad content",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoPrioridad"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/models.TipoPrioridad"
-                        }
-                    },
-                    "400": {
-                        "description": "the request contains incorrect syntax"
-                    }
-                }
-            },
-            "delete": {
-                "tags": [
-                    "tipo_prioridad"
-                ],
-                "description": "delete the TipoPrioridad",
-                "operationId": "TipoPrioridadController.Delete",
+                "description": "delete the NoticiaEtiqueta",
+                "operationId": "NoticiaEtiquetaController.Delete",
                 "parameters": [
                     {
                         "in": "path",
@@ -1436,6 +744,12 @@
                 "FechaCreacion": {
                     "type": "string"
                 },
+                "FechaFinal": {
+                    "type": "string"
+                },
+                "FechaInicio": {
+                    "type": "string"
+                },
                 "FechaModificacion": {
                     "type": "string"
                 },
@@ -1443,16 +757,18 @@
                     "type": "integer",
                     "format": "int64"
                 },
-                "IdTipoEstilo": {
-                    "$ref": "#/definitions/models.TipoEstilo"
+                "IdEstilo": {
+                    "type": "integer",
+                    "format": "int64"
                 },
-                "IdTipoPrioridad": {
-                    "$ref": "#/definitions/models.TipoPrioridad"
+                "Prioridad": {
+                    "type": "integer",
+                    "format": "int64"
                 }
             }
         },
-        "models.NoticiaTipoContenido": {
-            "title": "NoticiaTipoContenido",
+        "models.NoticiaContenido": {
+            "title": "NoticiaContenido",
             "type": "object",
             "properties": {
                 "Activo": {
@@ -1471,41 +787,17 @@
                     "type": "integer",
                     "format": "int64"
                 },
-                "IdNoticia": {
-                    "$ref": "#/definitions/models.Noticia"
-                },
-                "IdTipoContenido": {
-                    "$ref": "#/definitions/models.TipoContenido"
-                }
-            }
-        },
-        "models.NoticiaTipoEtiqueta": {
-            "title": "NoticiaTipoEtiqueta",
-            "type": "object",
-            "properties": {
-                "Activo": {
-                    "type": "boolean"
-                },
-                "FechaCreacion": {
-                    "type": "string"
-                },
-                "FechaModificacion": {
-                    "type": "string"
-                },
-                "Id": {
+                "IdContenido": {
                     "type": "integer",
                     "format": "int64"
                 },
                 "IdNoticia": {
                     "$ref": "#/definitions/models.Noticia"
-                },
-                "IdTipoEtiqueta": {
-                    "$ref": "#/definitions/models.TipoEtiqueta"
                 }
             }
         },
-        "models.TipoContenido": {
-            "title": "TipoContenido",
+        "models.NoticiaEtiqueta": {
+            "title": "NoticiaEtiqueta",
             "type": "object",
             "properties": {
                 "Activo": {
@@ -1521,74 +813,12 @@
                     "type": "integer",
                     "format": "int64"
                 },
-                "NombreContenido": {
-                    "type": "string"
-                }
-            }
-        },
-        "models.TipoEstilo": {
-            "title": "TipoEstilo",
-            "type": "object",
-            "properties": {
-                "Activo": {
-                    "type": "boolean"
-                },
-                "FechaCreacion": {
-                    "type": "string"
-                },
-                "FechaModificacion": {
-                    "type": "string"
-                },
-                "Id": {
+                "IdEtiqueta": {
                     "type": "integer",
                     "format": "int64"
                 },
-                "NombreEstilo": {
-                    "type": "string"
-                }
-            }
-        },
-        "models.TipoEtiqueta": {
-            "title": "TipoEtiqueta",
-            "type": "object",
-            "properties": {
-                "Activo": {
-                    "type": "boolean"
-                },
-                "FechaCreacion": {
-                    "type": "string"
-                },
-                "FechaModificacion": {
-                    "type": "string"
-                },
-                "Id": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "NombreEtiqueta": {
-                    "type": "string"
-                }
-            }
-        },
-        "models.TipoPrioridad": {
-            "title": "TipoPrioridad",
-            "type": "object",
-            "properties": {
-                "Activo": {
-                    "type": "boolean"
-                },
-                "FechaCreacion": {
-                    "type": "string"
-                },
-                "FechaModificacion": {
-                    "type": "string"
-                },
-                "Id": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "NombrePrioridad": {
-                    "type": "string"
+                "IdNoticia": {
+                    "$ref": "#/definitions/models.Noticia"
                 }
             }
         }
@@ -1599,32 +829,16 @@
             "description": "NoticiaController operations for Noticia\n"
         },
         {
-            "name": "noticia_tipo_etiqueta",
-            "description": "NoticiaTipoEtiquetaController operations for NoticiaTipoEtiqueta\n"
-        },
-        {
-            "name": "tipo_etiqueta",
-            "description": "TipoEtiquetaController operations for TipoEtiqueta\n"
+            "name": "noticia_etiqueta",
+            "description": "NoticiaEtiquetaController operations for NoticiaEtiqueta\n"
         },
         {
             "name": "modulo_publicacion",
             "description": "ModuloPublicacionController operations for ModuloPublicacion\n"
         },
         {
-            "name": "noticia_tipo_contenido",
-            "description": "NoticiaTipoContenidoController operations for NoticiaTipoContenido\n"
-        },
-        {
-            "name": "tipo_contenido",
-            "description": "TipoContenidoController operations for TipoContenido\n"
-        },
-        {
-            "name": "tipo_estilo",
-            "description": "TipoEstiloController operations for TipoEstilo\n"
-        },
-        {
-            "name": "tipo_prioridad",
-            "description": "TipoPrioridadController operations for TipoPrioridad\n"
+            "name": "noticia_contenido",
+            "description": "NoticiaContenidoController operations for NoticiaContenido\n"
         }
     ]
 }

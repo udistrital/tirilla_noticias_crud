@@ -10,47 +10,49 @@ import (
 	"github.com/udistrital/utils_oas/time_bogota"
 )
 
-type TipoEstilo struct {
-	Id                int    `orm:"column(id);pk;auto"`
-	NombreEstilo      string `orm:"column(nombre_estilo)"`
-	Activo            bool   `orm:"column(activo)"`
-	FechaCreacion     string `orm:"column(fecha_creacion);type(timestamp without time zone)"`
-	FechaModificacion string `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
+type NoticiaContenido struct {
+	Id                int      `orm:"column(id);pk;auto"`
+	Dato              string   `orm:"column(dato);type(json)"`
+	Activo            bool     `orm:"column(activo)"`
+	FechaCreacion     string   `orm:"column(fecha_creacion);type(timestamp without time zone)"`
+	FechaModificacion string   `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
+	IdNoticia         *Noticia `orm:"column(id_noticia);rel(fk)"`
+	IdContenido       int      `orm:"column(contenido_id);"`
 }
 
-func (t *TipoEstilo) TableName() string {
-	return "tipo_estilo"
+func (t *NoticiaContenido) TableName() string {
+	return "noticia_contenido"
 }
 
 func init() {
-	orm.RegisterModel(new(TipoEstilo))
+	orm.RegisterModel(new(NoticiaContenido))
 }
 
-// AddTipoEstilo insert a new TipoEstilo into database and returns
+// AddNoticiaContenido insert a new NoticiaContenido into database and returns
 // last inserted Id on success.
-func AddTipoEstilo(m *TipoEstilo) (id int64, err error) {
+func AddNoticiaContenido(m *NoticiaContenido) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return
 }
 
-// GetTipoEstiloById retrieves TipoEstilo by Id. Returns error if
+// GetNoticiaContenidoById retrieves NoticiaContenido by Id. Returns error if
 // Id doesn't exist
-func GetTipoEstiloById(id int) (v *TipoEstilo, err error) {
+func GetNoticiaContenidoById(id int) (v *NoticiaContenido, err error) {
 	o := orm.NewOrm()
-	v = &TipoEstilo{Id: id}
+	v = &NoticiaContenido{Id: id}
 	if err = o.Read(v); err == nil {
 		return v, nil
 	}
 	return nil, err
 }
 
-// GetAllTipoEstilo retrieves all TipoEstilo matches certain condition. Returns empty list if
+// GetAllNoticiaContenido retrieves all NoticiaContenido matches certain condition. Returns empty list if
 // no records exist
-func GetAllTipoEstilo(query map[string]string, fields []string, sortby []string, order []string,
+func GetAllNoticiaContenido(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
-	qs := o.QueryTable(new(TipoEstilo))
+	qs := o.QueryTable(new(NoticiaContenido))
 	// query k=v
 	for k, v := range query {
 		// rewrite dot-notation to Object__Attribute
@@ -100,7 +102,7 @@ func GetAllTipoEstilo(query map[string]string, fields []string, sortby []string,
 		}
 	}
 
-	var l []TipoEstilo
+	var l []NoticiaContenido
 	qs = qs.OrderBy(sortFields...)
 	if _, err = qs.Limit(limit, offset).All(&l, fields...); err == nil {
 		if len(fields) == 0 {
@@ -123,11 +125,11 @@ func GetAllTipoEstilo(query map[string]string, fields []string, sortby []string,
 	return nil, err
 }
 
-// UpdateTipoEstilo updates TipoEstilo by Id and returns error if
+// UpdateNoticiaContenido updates NoticiaContenido by Id and returns error if
 // the record to be updated doesn't exist
-func UpdateTipoEstiloById(m *TipoEstilo) (err error) {
+func UpdateNoticiaContenidoById(m *NoticiaContenido) (err error) {
 	o := orm.NewOrm()
-	v := TipoEstilo{Id: m.Id}
+	v := NoticiaContenido{Id: m.Id}
 	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		m.FechaCreacion = time_bogota.TiempoCorreccionFormato(v.FechaCreacion)
@@ -139,15 +141,15 @@ func UpdateTipoEstiloById(m *TipoEstilo) (err error) {
 	return
 }
 
-// DeleteTipoEstilo deletes TipoEstilo by Id and returns error if
+// DeleteNoticiaContenido deletes NoticiaContenido by Id and returns error if
 // the record to be deleted doesn't exist
-func DeleteTipoEstilo(id int) (err error) {
+func DeleteNoticiaContenido(id int) (err error) {
 	o := orm.NewOrm()
-	v := TipoEstilo{Id: id}
+	v := NoticiaContenido{Id: id}
 	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
-		if num, err = o.Delete(&TipoEstilo{Id: id}); err == nil {
+		if num, err = o.Delete(&NoticiaContenido{Id: id}); err == nil {
 			fmt.Println("Number of records deleted in database:", num)
 		}
 	}

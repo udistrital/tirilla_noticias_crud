@@ -10,47 +10,48 @@ import (
 	"github.com/udistrital/utils_oas/time_bogota"
 )
 
-type TipoEtiqueta struct {
-	Id                int    `orm:"column(id);pk;auto"`
-	NombreEtiqueta    string `orm:"column(nombre_etiqueta)"`
-	Activo            bool   `orm:"column(activo)"`
-	FechaCreacion     string `orm:"column(fecha_creacion);type(timestamp without time zone)"`
-	FechaModificacion string `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
+type NoticiaEtiqueta struct {
+	Id                int      `orm:"column(id);pk;auto"`
+	Activo            bool     `orm:"column(activo)"`
+	FechaCreacion     string   `orm:"column(fecha_creacion);type(timestamp without time zone)"`
+	FechaModificacion string   `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
+	IdNoticia         *Noticia `orm:"column(id_noticia);rel(fk)"`
+	IdEtiqueta        int      `orm:"column(etiqueta_id);"`
 }
 
-func (t *TipoEtiqueta) TableName() string {
-	return "tipo_etiqueta"
+func (t *NoticiaEtiqueta) TableName() string {
+	return "noticia_etiqueta"
 }
 
 func init() {
-	orm.RegisterModel(new(TipoEtiqueta))
+	orm.RegisterModel(new(NoticiaEtiqueta))
 }
 
-// AddTipoEtiqueta insert a new TipoEtiqueta into database and returns
+// AddNoticiaEtiqueta insert a new NoticiaEtiqueta into database and returns
 // last inserted Id on success.
-func AddTipoEtiqueta(m *TipoEtiqueta) (id int64, err error) {
+func AddNoticiaEtiqueta(m *NoticiaEtiqueta) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return
 }
 
-// GetTipoEtiquetaById retrieves TipoEtiqueta by Id. Returns error if
+// GetNoticiaEtiquetaById retrieves NoticiaEtiqueta by Id. Returns error if
 // Id doesn't exist
-func GetTipoEtiquetaById(id int) (v *TipoEtiqueta, err error) {
+func GetNoticiaEtiquetaById(id int) (v *NoticiaEtiqueta, err error) {
 	o := orm.NewOrm()
-	v = &TipoEtiqueta{Id: id}
+	v = &NoticiaEtiqueta{Id: id}
 	if err = o.Read(v); err == nil {
 		return v, nil
 	}
 	return nil, err
 }
 
-// GetAllTipoEtiqueta retrieves all TipoEtiqueta matches certain condition. Returns empty list if
+// GetAllNoticiaEtiqueta retrieves all NoticiaEtiqueta matches certain condition. Returns empty list if
 // no records exist
-func GetAllTipoEtiqueta(query map[string]string, fields []string, sortby []string, order []string,
+func GetAllNoticiaEtiqueta(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
-	qs := o.QueryTable(new(TipoEtiqueta))
+	qs := o.QueryTable(new(NoticiaEtiqueta))
 	// query k=v
 	for k, v := range query {
 		// rewrite dot-notation to Object__Attribute
@@ -100,7 +101,7 @@ func GetAllTipoEtiqueta(query map[string]string, fields []string, sortby []strin
 		}
 	}
 
-	var l []TipoEtiqueta
+	var l []NoticiaEtiqueta
 	qs = qs.OrderBy(sortFields...)
 	if _, err = qs.Limit(limit, offset).All(&l, fields...); err == nil {
 		if len(fields) == 0 {
@@ -123,11 +124,11 @@ func GetAllTipoEtiqueta(query map[string]string, fields []string, sortby []strin
 	return nil, err
 }
 
-// UpdateTipoEtiqueta updates TipoEtiqueta by Id and returns error if
+// UpdateNoticiaEtiqueta updates NoticiaEtiqueta by Id and returns error if
 // the record to be updated doesn't exist
-func UpdateTipoEtiquetaById(m *TipoEtiqueta) (err error) {
+func UpdateNoticiaEtiquetaById(m *NoticiaEtiqueta) (err error) {
 	o := orm.NewOrm()
-	v := TipoEtiqueta{Id: m.Id}
+	v := NoticiaEtiqueta{Id: m.Id}
 	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		m.FechaCreacion = time_bogota.TiempoCorreccionFormato(v.FechaCreacion)
@@ -139,15 +140,15 @@ func UpdateTipoEtiquetaById(m *TipoEtiqueta) (err error) {
 	return
 }
 
-// DeleteTipoEtiqueta deletes TipoEtiqueta by Id and returns error if
+// DeleteNoticiaEtiqueta deletes NoticiaEtiqueta by Id and returns error if
 // the record to be deleted doesn't exist
-func DeleteTipoEtiqueta(id int) (err error) {
+func DeleteNoticiaEtiqueta(id int) (err error) {
 	o := orm.NewOrm()
-	v := TipoEtiqueta{Id: id}
+	v := NoticiaEtiqueta{Id: id}
 	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
-		if num, err = o.Delete(&TipoEtiqueta{Id: id}); err == nil {
+		if num, err = o.Delete(&NoticiaEtiqueta{Id: id}); err == nil {
 			fmt.Println("Number of records deleted in database:", num)
 		}
 	}

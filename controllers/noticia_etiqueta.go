@@ -6,20 +6,20 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/udistrital/noticias_crud/models"
+	"github.com/udistrital/tirilla_noticias_crud/tirilla_noticias_crud/models"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
 	"github.com/udistrital/utils_oas/time_bogota"
 )
 
-// NoticiaTipoContenidoController operations for NoticiaTipoContenido
-type NoticiaTipoContenidoController struct {
+// NoticiaEtiquetaController operations for NoticiaEtiqueta
+type NoticiaEtiquetaController struct {
 	beego.Controller
 }
 
 // URLMapping ...
-func (c *NoticiaTipoContenidoController) URLMapping() {
+func (c *NoticiaEtiquetaController) URLMapping() {
 	c.Mapping("Post", c.Post)
 	c.Mapping("GetOne", c.GetOne)
 	c.Mapping("GetAll", c.GetAll)
@@ -29,17 +29,17 @@ func (c *NoticiaTipoContenidoController) URLMapping() {
 
 // Post ...
 // @Title Post
-// @Description create NoticiaTipoContenido
-// @Param	body		body 	models.NoticiaTipoContenido	true		"body for NoticiaTipoContenido content"
-// @Success 201 {int} models.NoticiaTipoContenido
+// @Description create NoticiaEtiqueta
+// @Param	body		body 	models.NoticiaEtiqueta	true		"body for NoticiaEtiqueta content"
+// @Success 201 {int} models.NoticiaEtiqueta
 // @Failure 400 the request contains incorrect syntax
 // @router / [post]
-func (c *NoticiaTipoContenidoController) Post() {
-	var v models.NoticiaTipoContenido
+func (c *NoticiaEtiquetaController) Post() {
+	var v models.NoticiaEtiqueta
 	v.FechaCreacion = time_bogota.TiempoBogotaFormato()
 	v.FechaModificacion = time_bogota.TiempoBogotaFormato()
 	if err := json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
-		if _, err := models.AddNoticiaTipoContenido(&v); err == nil {
+		if _, err := models.AddNoticiaEtiqueta(&v); err == nil {
 			c.Ctx.Output.SetStatus(201)
 			c.Data["json"] = map[string]interface{}{"Success": true, "Status": "201", "Message": "Registration successful", "Data": v}
 		} else {
@@ -57,15 +57,15 @@ func (c *NoticiaTipoContenidoController) Post() {
 
 // GetOne ...
 // @Title Get One
-// @Description get NoticiaTipoContenido by id
+// @Description get NoticiaEtiqueta by id
 // @Param	id		path 	string	true		"The key for staticblock"
-// @Success 200 {object} models.NoticiaTipoContenido
+// @Success 200 {object} models.NoticiaEtiqueta
 // @Failure 404 not found resource
 // @router /:id [get]
-func (c *NoticiaTipoContenidoController) GetOne() {
+func (c *NoticiaEtiquetaController) GetOne() {
 	idStr := c.Ctx.Input.Param(":id")
 	id, _ := strconv.Atoi(idStr)
-	v, err := models.GetNoticiaTipoContenidoById(id)
+	v, err := models.GetNoticiaEtiquetaById(id)
 	if err != nil {
 		logs.Error(err)
 		c.Data["mesaage"] = "Error service GetOne: The request contains an incorrect parameter or no record exists"
@@ -78,17 +78,17 @@ func (c *NoticiaTipoContenidoController) GetOne() {
 
 // GetAll ...
 // @Title Get All
-// @Description get NoticiaTipoContenido
+// @Description get NoticiaEtiqueta
 // @Param	query	query	string	false	"Filter. e.g. col1:v1,col2:v2 ..."
 // @Param	fields	query	string	false	"Fields returned. e.g. col1,col2 ..."
 // @Param	sortby	query	string	false	"Sorted-by fields. e.g. col1,col2 ..."
 // @Param	order	query	string	false	"Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ..."
 // @Param	limit	query	string	false	"Limit the size of result set. Must be an integer"
 // @Param	offset	query	string	false	"Start position of result set. Must be an integer"
-// @Success 200 {object} models.NoticiaTipoContenido
+// @Success 200 {object} models.NoticiaEtiqueta
 // @Failure 404 not found resource
 // @router / [get]
-func (c *NoticiaTipoContenidoController) GetAll() {
+func (c *NoticiaEtiquetaController) GetAll() {
 	var fields []string
 	var sortby []string
 	var order []string
@@ -130,7 +130,7 @@ func (c *NoticiaTipoContenidoController) GetAll() {
 		}
 	}
 
-	l, err := models.GetAllNoticiaTipoContenido(query, fields, sortby, order, offset, limit)
+	l, err := models.GetAllNoticiaEtiqueta(query, fields, sortby, order, offset, limit)
 	if err != nil {
 		logs.Error(err)
 		c.Data["mesaage"] = "Error service GetAll: The request contains an incorrect parameter or no record exists"
@@ -146,19 +146,19 @@ func (c *NoticiaTipoContenidoController) GetAll() {
 
 // Put ...
 // @Title Put
-// @Description update the NoticiaTipoContenido
+// @Description update the NoticiaEtiqueta
 // @Param	id		path 	string	true		"The id you want to update"
-// @Param	body		body 	models.NoticiaTipoContenido	true		"body for NoticiaTipoContenido content"
-// @Success 200 {object} models.NoticiaTipoContenido
+// @Param	body		body 	models.NoticiaEtiqueta	true		"body for NoticiaEtiqueta content"
+// @Success 200 {object} models.NoticiaEtiqueta
 // @Failure 400 the request contains incorrect syntax
 // @router /:id [put]
-func (c *NoticiaTipoContenidoController) Put() {
+func (c *NoticiaEtiquetaController) Put() {
 	idStr := c.Ctx.Input.Param(":id")
 	id, _ := strconv.Atoi(idStr)
-	v := models.NoticiaTipoContenido{Id: id}
+	v := models.NoticiaEtiqueta{Id: id}
 	if err := json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
 		v.FechaModificacion = time_bogota.TiempoBogotaFormato()
-		if err := models.UpdateNoticiaTipoContenidoById(&v); err == nil {
+		if err := models.UpdateNoticiaEtiquetaById(&v); err == nil {
 			c.Data["json"] = map[string]interface{}{"Success": true, "Status": "200", "Message": "Update successful", "Data": v}
 		} else {
 			logs.Error(err)
@@ -175,15 +175,15 @@ func (c *NoticiaTipoContenidoController) Put() {
 
 // Delete ...
 // @Title Delete
-// @Description delete the NoticiaTipoContenido
+// @Description delete the NoticiaEtiqueta
 // @Param	id		path 	string	true		"The id you want to delete"
 // @Success 200 {string} delete success!
 // @Failure 404 not found resource
 // @router /:id [delete]
-func (c *NoticiaTipoContenidoController) Delete() {
+func (c *NoticiaEtiquetaController) Delete() {
 	idStr := c.Ctx.Input.Param(":id")
 	id, _ := strconv.Atoi(idStr)
-	if err := models.DeleteNoticiaTipoContenido(id); err == nil {
+	if err := models.DeleteNoticiaEtiqueta(id); err == nil {
 		d := map[string]interface{}{"Id": id}
 		c.Data["json"] = map[string]interface{}{"Success": true, "Status": "200", "Message": "Delete successful", "Data": d}
 	} else {

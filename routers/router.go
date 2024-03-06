@@ -22,15 +22,9 @@ func init() {
 			),
 		),
 
-		beego.NSNamespace("/noticia_tipo_etiqueta",
+		beego.NSNamespace("/noticia_etiqueta",
 			beego.NSInclude(
-				&controllers.NoticiaTipoEtiquetaController{},
-			),
-		),
-
-		beego.NSNamespace("/tipo_etiqueta",
-			beego.NSInclude(
-				&controllers.TipoEtiquetaController{},
+				&controllers.NoticiaEtiquetaController{},
 			),
 		),
 
@@ -40,27 +34,9 @@ func init() {
 			),
 		),
 
-		beego.NSNamespace("/noticia_tipo_contenido",
+		beego.NSNamespace("/noticia_contenido",
 			beego.NSInclude(
-				&controllers.NoticiaTipoContenidoController{},
-			),
-		),
-
-		beego.NSNamespace("/tipo_contenido",
-			beego.NSInclude(
-				&controllers.TipoContenidoController{},
-			),
-		),
-
-		beego.NSNamespace("/tipo_estilo",
-			beego.NSInclude(
-				&controllers.TipoEstiloController{},
-			),
-		),
-
-		beego.NSNamespace("/tipo_prioridad",
-			beego.NSInclude(
-				&controllers.TipoPrioridadController{},
+				&controllers.NoticiaContenidoController{},
 			),
 		),
 	)

@@ -6,20 +6,20 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/udistrital/noticias_crud/models"
+	"github.com/udistrital/tirilla_noticias_crud/tirilla_noticias_crud/models"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
 	"github.com/udistrital/utils_oas/time_bogota"
 )
 
-// TipoEtiquetaController operations for TipoEtiqueta
-type TipoEtiquetaController struct {
+// NoticiaContenidoController operations for NoticiaContenido
+type NoticiaContenidoController struct {
 	beego.Controller
 }
 
 // URLMapping ...
-func (c *TipoEtiquetaController) URLMapping() {
+func (c *NoticiaContenidoController) URLMapping() {
 	c.Mapping("Post", c.Post)
 	c.Mapping("GetOne", c.GetOne)
 	c.Mapping("GetAll", c.GetAll)
@@ -29,17 +29,17 @@ func (c *TipoEtiquetaController) URLMapping() {
 
 // Post ...
 // @Title Post
-// @Description create TipoEtiqueta
-// @Param	body		body 	models.TipoEtiqueta	true		"body for TipoEtiqueta content"
-// @Success 201 {int} models.TipoEtiqueta
+// @Description create NoticiaContenido
+// @Param	body		body 	models.NoticiaContenido	true		"body for NoticiaContenido content"
+// @Success 201 {int} models.NoticiaContenido
 // @Failure 400 the request contains incorrect syntax
 // @router / [post]
-func (c *TipoEtiquetaController) Post() {
-	var v models.TipoEtiqueta
+func (c *NoticiaContenidoController) Post() {
+	var v models.NoticiaContenido
 	v.FechaCreacion = time_bogota.TiempoBogotaFormato()
 	v.FechaModificacion = time_bogota.TiempoBogotaFormato()
 	if err := json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
-		if _, err := models.AddTipoEtiqueta(&v); err == nil {
+		if _, err := models.AddNoticiaContenido(&v); err == nil {
 			c.Ctx.Output.SetStatus(201)
 			c.Data["json"] = map[string]interface{}{"Success": true, "Status": "201", "Message": "Registration successful", "Data": v}
 		} else {
@@ -57,15 +57,15 @@ func (c *TipoEtiquetaController) Post() {
 
 // GetOne ...
 // @Title Get One
-// @Description get TipoEtiqueta by id
+// @Description get NoticiaContenido by id
 // @Param	id		path 	string	true		"The key for staticblock"
-// @Success 200 {object} models.TipoEtiqueta
+// @Success 200 {object} models.NoticiaContenido
 // @Failure 404 not found resource
 // @router /:id [get]
-func (c *TipoEtiquetaController) GetOne() {
+func (c *NoticiaContenidoController) GetOne() {
 	idStr := c.Ctx.Input.Param(":id")
 	id, _ := strconv.Atoi(idStr)
-	v, err := models.GetTipoEtiquetaById(id)
+	v, err := models.GetNoticiaContenidoById(id)
 	if err != nil {
 		logs.Error(err)
 		c.Data["mesaage"] = "Error service GetOne: The request contains an incorrect parameter or no record exists"
@@ -78,17 +78,17 @@ func (c *TipoEtiquetaController) GetOne() {
 
 // GetAll ...
 // @Title Get All
-// @Description get TipoEtiqueta
+// @Description get NoticiaContenido
 // @Param	query	query	string	false	"Filter. e.g. col1:v1,col2:v2 ..."
 // @Param	fields	query	string	false	"Fields returned. e.g. col1,col2 ..."
 // @Param	sortby	query	string	false	"Sorted-by fields. e.g. col1,col2 ..."
 // @Param	order	query	string	false	"Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ..."
 // @Param	limit	query	string	false	"Limit the size of result set. Must be an integer"
 // @Param	offset	query	string	false	"Start position of result set. Must be an integer"
-// @Success 200 {object} models.TipoEtiqueta
+// @Success 200 {object} models.NoticiaContenido
 // @Failure 404 not found resource
 // @router / [get]
-func (c *TipoEtiquetaController) GetAll() {
+func (c *NoticiaContenidoController) GetAll() {
 	var fields []string
 	var sortby []string
 	var order []string
@@ -130,7 +130,7 @@ func (c *TipoEtiquetaController) GetAll() {
 		}
 	}
 
-	l, err := models.GetAllTipoEtiqueta(query, fields, sortby, order, offset, limit)
+	l, err := models.GetAllNoticiaContenido(query, fields, sortby, order, offset, limit)
 	if err != nil {
 		logs.Error(err)
 		c.Data["mesaage"] = "Error service GetAll: The request contains an incorrect parameter or no record exists"
@@ -139,26 +139,26 @@ func (c *TipoEtiquetaController) GetAll() {
 		if l == nil {
 			l = append(l, map[string]interface{}{})
 		}
-		c.Data["json"] = map[string]interface{}{"Success": true, "Status": "200", "Message": "Request successful", "Data": l}
+		c.Data["json"] = l
 	}
 	c.ServeJSON()
 }
 
 // Put ...
 // @Title Put
-// @Description update the TipoEtiqueta
+// @Description update the NoticiaContenido
 // @Param	id		path 	string	true		"The id you want to update"
-// @Param	body		body 	models.TipoEtiqueta	true		"body for TipoEtiqueta content"
-// @Success 200 {object} models.TipoEtiqueta
+// @Param	body		body 	models.NoticiaContenido	true		"body for NoticiaContenido content"
+// @Success 200 {object} models.NoticiaContenido
 // @Failure 400 the request contains incorrect syntax
 // @router /:id [put]
-func (c *TipoEtiquetaController) Put() {
+func (c *NoticiaContenidoController) Put() {
 	idStr := c.Ctx.Input.Param(":id")
 	id, _ := strconv.Atoi(idStr)
-	v := models.TipoEtiqueta{Id: id}
+	v := models.NoticiaContenido{Id: id}
 	if err := json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
 		v.FechaModificacion = time_bogota.TiempoBogotaFormato()
-		if err := models.UpdateTipoEtiquetaById(&v); err == nil {
+		if err := models.UpdateNoticiaContenidoById(&v); err == nil {
 			c.Data["json"] = map[string]interface{}{"Success": true, "Status": "200", "Message": "Update successful", "Data": v}
 		} else {
 			logs.Error(err)
@@ -175,15 +175,15 @@ func (c *TipoEtiquetaController) Put() {
 
 // Delete ...
 // @Title Delete
-// @Description delete the TipoEtiqueta
+// @Description delete the NoticiaContenido
 // @Param	id		path 	string	true		"The id you want to delete"
 // @Success 200 {string} delete success!
 // @Failure 404 not found resource
 // @router /:id [delete]
-func (c *TipoEtiquetaController) Delete() {
+func (c *NoticiaContenidoController) Delete() {
 	idStr := c.Ctx.Input.Param(":id")
 	id, _ := strconv.Atoi(idStr)
-	if err := models.DeleteTipoEtiqueta(id); err == nil {
+	if err := models.DeleteNoticiaContenido(id); err == nil {
 		d := map[string]interface{}{"Id": id}
 		c.Data["json"] = map[string]interface{}{"Success": true, "Status": "200", "Message": "Delete successful", "Data": d}
 	} else {
