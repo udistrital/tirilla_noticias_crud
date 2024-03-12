@@ -38,6 +38,8 @@ func (c *NoticiaController) Post() {
 	var v models.Noticia
 	v.FechaCreacion = time_bogota.TiempoBogotaFormato()
 	v.FechaModificacion = time_bogota.TiempoBogotaFormato()
+	v.FechaInicio = time_bogota.TiempoBogotaFormato()
+	v.FechaFinal = time_bogota.TiempoBogotaFormato()
 	if err := json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
 		if _, err := models.AddNoticia(&v); err == nil {
 			c.Ctx.Output.SetStatus(201)

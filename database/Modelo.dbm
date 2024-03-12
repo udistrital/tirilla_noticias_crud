@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+ Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="1.1.0" use-changelog="false" max-obj-count="4"
+	 last-position="0,0" last-zoom="0.9" scene-rect="0,-0.5,1925.63,1077.3"
+	 default-schema="public" default-owner="postgres"
+	 layers="Default layer"
+	 active-layers="0"
+	 layer-name-colors="#000000"
+	 layer-rect-colors="#b4b4b4"
+	 show-layer-names="false" show-layer-rects="false">
+<database name="new_database" is-template="false" allow-conns="true">
+</database>
+
+<schema name="public" layers="0" fill-color="#e1e1e1" name-color="#000000" sql-disabled="true">
+</schema>
+
+<tag name="referencias">
+	<style id="table-body" colors="#474f56,#474f56,#595e61"/>
+	<style id="table-ext-body" colors="#474f56,#474f56,#595e61"/>
+	<style id="table-name" colors="#000000"/>
+	<style id="table-schema-name" colors="#000000"/>
+	<style id="table-title" colors="#3275b0,#6ec0ff,#77cbff"/>
+	<style id="table-toggler-body" colors="#474f56,#474f56,#595e61"/>
+	<style id="table-toggler-btns" colors="#3275b0,#6ec0ff,#77cbff"/>
+	<comment> <![CDATA[a]]> </comment>
+</tag>
+<table name="noticia" layers="0" collapse-mode="2" max-obj-count="9" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="820" y="420"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="id_estilo" not-null="true">
+		<type name="integer" length="0"/>
+		<comment> <![CDATA[Hace referencia a id_ parametros en el modelo parametros_crud]]> </comment>
+	</column>
+	<column name="prioridad" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="fecha_inicio" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_final" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="activo" not-null="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="noticia_pk" type="pk-constr" table="public.noticia">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="noticia_etiqueta" layers="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="120" y="320"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="activo" not-null="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="id_parametro_etiqueta" not-null="true">
+		<type name="integer" length="0"/>
+		<comment> <![CDATA[Hace referencia  id_parametro en el modelo parametros_crud]]> </comment>
+	</column>
+	<constraint name="noticia_etiqueta_pk" type="pk-constr" table="public.noticia_etiqueta">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="id_noticia" index="4"/>
+	</customidxs>
+	<customidxs object-type="constraint">
+		<object name="noticia_fk" index="1"/>
+	</customidxs></table>
+
+<relationship name="noticia_has_many_noticia_etiqueta" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#ad11e7"
+	 src-table="public.noticia"
+	 dst-table="public.noticia_etiqueta"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-17.5247" y="-10.704"/>
+	</label>
+</relationship>
+
+<table name="modulo_publicacion" layers="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="800" y="60"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="ref_modulo_id" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="activo" not-null="true">
+		<type name="bool" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="modulo_publicacion_pk" type="pk-constr" table="public.modulo_publicacion">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<relationship name="noticia_has_many_modulo_publicacion" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#d33767"
+	 src-table="public.noticia"
+	 dst-table="public.modulo_publicacion"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="4.89048" y="-22.253"/>
+	</label>
+</relationship>
+
+<table name="noticia_contenido" layers="0" collapse-mode="2" max-obj-count="8" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1520" y="380"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="dato" not-null="true">
+		<type name="json" length="0"/>
+	</column>
+	<column name="id_parametro_contenido" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="activo" not-null="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="noticia_contenido_pk" type="pk-constr" table="public.noticia_contenido">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="id_noticia" index="2"/>
+	</customidxs>
+	<customidxs object-type="constraint">
+		<object name="noticia_fk" index="1"/>
+	</customidxs></table>
+
+<relationship name="noticia_has_many_noticia_tipo_contenido" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#43f048"
+	 src-table="public.noticia"
+	 dst-table="public.noticia_contenido"
+	 src-required="false" dst-required="false"/>
+
+<textbox name="ref_modulo_id" layers="0" z-value="0" width="101.938" font-size="9">
+	<position x="1200" y="180"/>
+	<comment> <![CDATA[ref_modulo_id datos traidos de parametros_crud]]> </comment>
+</textbox>
+
+<textbox name="id_parametro_etiqueta_cp" layers="0" z-value="0" width="137.938" font-size="9">
+	<position x="260" y="560"/>
+	<comment> <![CDATA[id_parametro_etiqueta hace referencia a id de la tabla parametro del modelo parametros_crud]]> </comment>
+</textbox>
+
+<textbox name="id_estilo_cp_cp" layers="0" z-value="0" width="119.703" font-size="9">
+	<position x="820" y="660"/>
+	<comment> <![CDATA[id_estilo hace referencia a id de la tabla parametro del modelo parametros_crud]]> </comment>
+</textbox>
+
+<textbox name="id_parametro_contenido_cp_cp" layers="0" z-value="0" width="152.422" font-size="9">
+	<position x="1540" y="620"/>
+	<comment> <![CDATA[id_parametro_contenido hace referencia a id de la tabla parametro del modelo parametros_crud]]> </comment>
+</textbox>
+
+</dbmodel>
